@@ -1,0 +1,42 @@
+body {
+  background-color: #f8f8ff;
+  font-family: "Roboto", sans-serif;
+}
+table {
+  background-color: white;
+}
+
+.myBtn {
+  background-color: #4682b4;
+  border-color: #4682b4;
+}
+.myBtn:hover {
+  background-color: #f8f8ff;
+  border-color: #4682b4;
+  color: #4682b4;
+}
+.noBtn {
+  display: none;
+}
+.search {
+  position: relative;
+  top: 3px;
+  float: right; 
+  width: 30%;
+}
+.loadBtn {
+  position: relative;
+  top: -6px;
+  float: left; 
+  margin: 10px;
+}
+.addBtn {
+  float: left; 
+  margin: 20px;
+}
+.dates {
+  float: left; 
+  margin: 10px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
