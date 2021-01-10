@@ -1,2 +1,5 @@
 RemoveHandler .html .htm
 AddType application/x-httpd-php .php .htm .html .phtml
+
+AddDefaultCharset UTF-8
+php_value mbstring.internal_encoding UTF-8

@@ -1,5 +1,6 @@
 <?php
-include 'php\requests.php';
+header('Content-Type: text/html; charset=utf-8');
+include 'php/requests.php';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -10,9 +11,9 @@ include 'php\requests.php';
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  	<link rel="preconnect" href="https://fonts.gstatic.com">
-  	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
 	<title>База заявок АХП | Республиканский Реабилитационный Центр МЗ ДНР</title>
 </head>
 
@@ -21,18 +22,19 @@ include 'php\requests.php';
 	<div class="container">
 		<div class="row">
 			<div class="col mt-1">
-				<button class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal">Добавить запись</button>
-					<form action="" method="GET">
-						<div class="form-group ">
-							<button name="search_submit" type="submit" class="btn btn-primary noBtn">Найти</button>
-							<input type="search" class="form-control search" name="search" value="" placeholder="Поиск...">
-							<button name="load_submit" type="submit" class="btn btn-primary ml-auto loadBtn myBtn">Загрузить базу</button>
-							<input name="start_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
-							<input name="end_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
-							<button name="find_submit" type="submit" class="btn btn-primary ml-auto loadBtn myBtn">Найти</button>
-						</div>
-						</form>
-				<table class="table shadow">
+				<button class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal">Добавить</button>
+				<form action="" method="GET">
+					<div class="form-group ">
+						<button name="search_submit" type="submit" class="btn btn-primary noBtn">Найти</button>
+						<input type="search" class="form-control search" name="search" value="" placeholder="Поиск...">
+						<button name="load_submit" type="submit" class="btn btn-primary loadBtn myBtn">Загрузить базу</button>
+						<button onclick="exportAlert();" name="export_submit" class="btn btn-primary expBtn myBtn" type="submit">Экспорт в Excel</button>
+						<input name="start_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
+						<input name="end_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
+						<button name="find_submit" type="submit" class="btn btn-primary ml-auto loadBtn myBtn">Найти</button>
+					</div>
+				</form>
+				<table id="myTable" class="table shadow">
 					<thead class="thead-dark">
 						<tr>
 							<th>№</th>
@@ -52,15 +54,15 @@ include 'php\requests.php';
 								<td><?= $value['executor'] ?></td>
 								<td><?= $value['status'] ?></td>
 								<td>
-									<a href="?edit=<?= $value['id'] ?>"  class="btn btn-primary btn-sm myBtn" data-toggle="modal" data-placement="top" data-target="#editModal<?= $value['id'] ?>"><i class="fa fa-edit"></i></a>
+									<a href="?edit=<?= $value['id'] ?>" class="btn btn-primary btn-sm myBtn" data-toggle="modal" data-placement="top" data-target="#editModal<?= $value['id'] ?>"><i class="fa fa-edit"></i></a>
 									<a href="?delete=<?= $value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" data-target="#deleteModal<?= $value['id'] ?>"><i class="fa fa-trash"></i></i></a>
-									<?php require 'php\modal.php'; ?> 
+									<?php require 'php/modal.php'; ?>
 								</td>
 							</tr>
 						<?php } ?>
 					</thead>
 				</table>
-				
+
 			</div>
 		</div>
 	</div>
@@ -142,6 +144,11 @@ include 'php\requests.php';
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script>
+		function exportAlert() {
+			alert("Файл сохранен на Рабочий Стол!");
+		}
+	</script>
 </body>
 
 </html>

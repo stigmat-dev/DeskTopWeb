@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 body {
   background-color: #f8f8ff;
   font-family: "Roboto", sans-serif;
@@ -19,24 +21,29 @@ table {
   display: none;
 }
 .search {
-  position: relative;
-  top: 3px;
-  float: right; 
-  width: 30%;
+  float: right;
+  width: 24%;
 }
 .loadBtn {
   position: relative;
   top: -6px;
-  float: left; 
-  margin: 10px;
+  float: left;
+  margin: 5px;
 }
+.expBtn {
+  position: relative;
+  top: -6px;
+  float: left;
+  margin: 5px;
+}
+
 .addBtn {
-  float: left; 
-  margin: 20px;
+  float: left;
+  margin: 15px;
 }
 .dates {
-  float: left; 
-  margin: 10px;
+  float: left;
+  margin: 5px;
   border: 1px solid lightgray;
   border-radius: 3px;
 }
