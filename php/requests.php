@@ -103,7 +103,7 @@ if (isset($_GET['export_submit'])) {
 
 
 	$s = 1;
-	
+
 	while ($row = mysqli_fetch_array($query)) {
 		$s++;
 		$sheet->setCellValue("A$s", $row['id'], PHPExcel_Cell_DataType::TYPE_STRING);
@@ -171,5 +171,7 @@ if (isset($_GET['export_submit'])) {
 
 	$objWriter = PHPExcel_IOFactory::createWriter($xls, 'Excel2007');
 	$objWriter->save("Выборка данных.xlsx");
-	header('Location: ./');
+
+
+	header('Location: ./Выборка данных.xlsx');
 }

@@ -28,7 +28,7 @@ include 'php/requests.php';
 						<button name="search_submit" type="submit" class="btn btn-primary noBtn">Найти</button>
 						<input type="search" class="form-control search" name="search" value="" placeholder="Поиск...">
 						<button name="load_submit" type="submit" class="btn btn-primary loadBtn myBtn">Загрузить базу</button>
-						<button onclick="exportAlert();" name="export_submit" class="btn btn-primary expBtn myBtn" type="submit">Экспорт в Excel</button>
+						<button name="export_submit" class="btn btn-primary expBtn myBtn" type="submit">Экспорт в Excel</button>
 						<input name="start_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
 						<input name="end_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
 						<button name="find_submit" type="submit" class="btn btn-primary ml-auto loadBtn myBtn">Найти</button>
@@ -144,11 +144,6 @@ include 'php/requests.php';
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script>
-		function exportAlert() {
-			alert("Файл сохранен на Рабочий Стол!");
-		}
-	</script>
 </body>
 
 </html>
