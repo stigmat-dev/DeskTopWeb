@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <select class="form-control" name="edit_unit" value="<?= $value['unit'] ?>">
-                            <option value="" selected>Выберите подразделение...</option>
+                            <option value="<?= $value['unit'] ?>" selected><?= $value['unit'] ?></option>
                             <option value="Главный врач">Главный врач</option>
                             <option value="Приемная">Приемная</option>
                             <option value="Зам. по медицинской части">Зам. по медицинской части</option>
@@ -30,9 +30,10 @@
                             <option value="Орг. метод. отдел">Орг. метод. отдел</option>
                             <option value="Экономический отдел">Экономический отдел</option>
                             <option value="Бухгалтерия">Бухгалтерия</option>
+                            <option value="Расчетный отдел">Расчетный отдел</option>
                             <option value="Отдел кадров">Отдел кадров</option>
                             <option value="Юрист">Юрист</option>
-                            <option value="Статистический отдел">Статистический отдел</option>
+                            <option value="Стат. отдел">Стат. отдел</option>
                             <option value="Нейрохирургия 1">Нейрохирургия 1</option>
                             <option value="Нейрохирургия 2">Нейрохирургия 2</option>
                             <option value="Травматология 1">Травматология 1</option>
@@ -49,14 +50,14 @@
                     </div>
                     <div class="form-group">
                         <select class="form-control" name="edit_executor" value="<?= $value['executor'] ?>">
-                            <option value="" selected>Выберите исполнителя...</option>
+                            <option value="<?= $value['executor'] ?>" selected><?= $value['executor'] ?></option>
                             <option value="Хрипливцев И.">Хрипливцев И.</option>
                             <option value="Шелудько В.">Шелудько В.</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <select class="form-control" name="edit_status" value="<?= $value['status'] ?>">
-                            <option value="" selected>Выберите статус...</option>
+                            <option value="<?= $value['status'] ?>" selected><?= $value['status'] ?></option>
                             <option value="В работе">В работе</option>
                             <option value="Выполнено">Выполнено</option>
                         </select>
