@@ -27,7 +27,7 @@ $edit_status = @$_POST['edit_status'];
 $get_id = @$_GET['id'];
 
 
-$sql = $connect->prepare("SELECT * FROM main;");
+$sql = $connect->prepare("SELECT * FROM main ORDER BY id DESC;");
 $sql->execute();
 $result = $sql->fetchAll();
 
@@ -66,7 +66,7 @@ if (isset($_GET['search_submit'])) {
 }
 
 if (isset($_GET['find_submit'])) {
-	$sql = "SELECT * FROM main WHERE date > '$start_date' AND date < '$end_date';";
+	$sql = "SELECT * FROM main WHERE date >= '$start_date' AND date <= '$end_date';";
 	$query = $connect->prepare($sql);
 	$query->execute();
 	$result = $query->fetchAll();

@@ -18,22 +18,25 @@ include 'php/requests.php';
 </head>
 
 <body>
-	<div style="height: 100px;"></div>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col mt-1">
-				<button class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal">Добавить</button>
+				<nav class="menu">
+					<button class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal">Добавить</button>
 				<form action="" method="GET">
 					<div class="form-group ">
 						<button name="search_submit" type="submit" class="btn btn-primary noBtn">Найти</button>
 						<input type="search" class="form-control search" name="search" value="" placeholder="Поиск...">
-						<button name="load_submit" type="submit" class="btn btn-primary loadBtn myBtn">Загрузить базу</button>
+						<button name="load_submit" type="submit" class="btn btn-primary loadBtn myBtn">Обновить</button>
 						<button name="export_submit" class="btn btn-primary expBtn myBtn" type="submit">Экспорт в Excel</button>
+						<button name="find_submit" type="submit" class="btn btn-primary ml-auto searchBtn myBtn">Найти</button>
 						<input name="start_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
 						<input name="end_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
-						<button name="find_submit" type="submit" class="btn btn-primary ml-auto loadBtn myBtn">Найти</button>
+						
 					</div>
 				</form>
+				</nav>
+				
 				<table id="myTable" class="table shadow">
 					<thead class="thead-dark">
 						<tr>
@@ -99,9 +102,10 @@ include 'php/requests.php';
 								<option value="Орг. метод. отдел">Орг. метод. отдел</option>
 								<option value="Экономический отдел">Экономический отдел</option>
 								<option value="Бухгалтерия">Бухгалтерия</option>
+								<option value="Расчетный отдел">Расчетный отдел</option>
 								<option value="Отдел кадров">Отдел кадров</option>
 								<option value="Юрист">Юрист</option>
-								<option value="Статистический отдел">Статистический отдел</option>
+								<option value="Стат. отдел">Стат. отдел</option>
 								<option value="Нейрохирургия 1">Нейрохирургия 1</option>
 								<option value="Нейрохирургия 2">Нейрохирургия 2</option>
 								<option value="Травматология 1">Травматология 1</option>
