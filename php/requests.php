@@ -168,10 +168,8 @@ if (isset($_GET['export_submit'])) {
 	);
 
 	$sheet->getStyle("A1:F$s")->applyFromArray($border);
-
 	$objWriter = PHPExcel_IOFactory::createWriter($xls, 'Excel2007');
 	$objWriter->save("Выборка данных.xlsx");
-
 
 	header('Location: ./Выборка данных.xlsx');
 }
