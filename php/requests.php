@@ -35,7 +35,7 @@ $result = $sql->fetchAll();
 
 
 if (isset($_POST['add_submit'])) {
-	$sql = ("INSERT INTO main(`date`, `name`, `unit`, `executor`, `status`) VALUES(?,?,?,?,?);");
+	$sql = "INSERT INTO main(`date`, `name`, `unit`, `executor`, `status`) VALUES(?,?,?,?,?);";
 	$query = $connect->prepare($sql);
 	$query->execute([$date, $name, $unit, $executor, $status]);
 	header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -83,7 +83,7 @@ if (isset($_GET['load_submit'])) {
 
 if (isset($_GET['export_submit'])) {
 
-	$link = mysqli_connect('' . $db_host . '', '' . $db_user . '', '' . $db_password . '', '' . $db_base . '');
+	$link = mysqli_connect('' . $db_host . '', '' . $db_user . '', '' . $db_password . '', '' . $db_name . '');
 	$query = mysqli_query($link, "SELECT * FROM main ORDER by id;");
 
 	require_once 'PHPExcel.php';
