@@ -32,6 +32,8 @@ $sql->execute();
 $result = $sql->fetchAll();
 
 
+
+
 if (isset($_POST['add_submit'])) {
 	$sql = ("INSERT INTO main(`date`, `name`, `unit`, `executor`, `status`) VALUES(?,?,?,?,?);");
 	$query = $connect->prepare($sql);
