@@ -5,6 +5,7 @@ include 'connect.php';
 $date = @$_POST['date'];
 $date = date("d.m.Y", strtotime($date));
 $name = @$_POST['name'];
+$note = @$_POST['note'];
 $unit = @$_POST['unit'];
 $executor = @$_POST['executor'];
 $status = @$_POST['status'];

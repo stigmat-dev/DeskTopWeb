@@ -1,13 +1,9 @@
 @charset "utf-8";
 
-* {
-  margin: 0 auto;
-}
-
 body {
   background-color: #e6e6fa;
   font-family: "Roboto", sans-serif;
-  font-size: 11pt;
+  font-size: 12pt;
 }
 table {
   background-color: white;
@@ -73,4 +69,10 @@ table {
 th {
   position: sticky;
   top: 78px;
+}
+.myLink {
+  color: #4682b4;
+}
+.myLink:hover {
+  text-decoration: none;
 }

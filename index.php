@@ -43,6 +43,7 @@ include 'php/requests.php';
 							<th>№</th>
 							<th>Дата</th>
 							<th>Наименование</th>
+							<th>Примечание</th>
 							<th>Подразделение</th>
 							<th>Исполнитель</th>
 							<th>Статус</th>
@@ -53,6 +54,7 @@ include 'php/requests.php';
 								<td><?= $value['id'] ?></td>
 								<td><?= $value['date'] ?></td>
 								<td><?= $value['name'] ?></td>
+								<td><a href="#" class="myLink" data-toggle="modal" data-target="#">Открыть</a></td>
 								<td><?= $value['unit'] ?></td>
 								<td><?= $value['executor'] ?></td>
 								<td><?= $value['status'] ?></td>
@@ -91,7 +93,7 @@ include 'php/requests.php';
 						</div>
 						<div class="form-group">
 							<select class="form-control" name="unit">
-								<option value="" selected>Выберите подразделение...</option>
+								<option value="" selected>Выберите подразделение</option>
 								<option value="Главный врач">Главный врач</option>
 								<option value="Приемная">Приемная</option>
 								<option value="Зам. по медицинской части">Зам. по медицинской части</option>
@@ -122,17 +124,20 @@ include 'php/requests.php';
 						</div>
 						<div class="form-group">
 							<select class="form-control" name="executor">
-								<option value="" selected>Выберите исполнителя...</option>
+								<option value="" selected>Выберите исполнителя</option>
 								<option value="Хрипливцев И.">Хрипливцев И.</option>
 								<option value="Шелудько В.">Шелудько В.</option>
 							</select>
 						</div>
 						<div class="form-group">
 							<select class="form-control" name="status">
-								<option value="" selected>Выберите статус...</option>
+								<option value="" selected>Выберите статус</option>
 								<option value="В работе">В работе</option>
 								<option value="Выполнено">Выполнено</option>
 							</select>
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" name="note" placeholder="Примечание"></textarea>
 						</div>
 				</div>
 				<div class="modal-footer">
