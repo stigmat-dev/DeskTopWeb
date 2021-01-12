@@ -22,17 +22,17 @@ include 'php/requests.php';
 		<div class="row">
 			<div class="col mt-1">
 				<nav class="menu shadow">
-					<button class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal">Добавить</button>
+					<button class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal"><i class="far fa-address-card"></i></button>
 					<form action="" method="GET">
 						<div class="form-group ">
+
 							<button name="search_submit" type="submit" class="btn btn-primary noBtn">Найти</button>
-							<input type="search" class="form-control search" name="search" value="" placeholder="Поиск...">
-							<button name="load_submit" type="submit" class="btn btn-primary loadBtn myBtn">Обновить</button>
-							<button name="export_submit" class="btn btn-primary expBtn myBtn" type="submit">Экспорт в Excel</button>
-							<button name="find_submit" type="submit" class="btn btn-primary ml-auto searchBtn myBtn">Найти</button>
+							<input type="search" class="form-control search" name="search" value="" placeholder="&#128269;">
+							<button name="load_submit" type="submit" class="btn btn-primary loadBtn myBtn"><i class="fas fa-sync-alt"></i></button>
+							<button name="export_submit" class="btn btn-primary expBtn myBtn" type="submit"><i class="far fa-file-excel"></i></button>
+							<button name="find_submit" type="submit" class="btn btn-primary ml-auto searchBtn myBtn"><i class="fas fa-search"></i></button>
 							<input name="start_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
 							<input name="end_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
-
 						</div>
 					</form>
 				</nav>
@@ -54,13 +54,15 @@ include 'php/requests.php';
 								<td><?= $value['id'] ?></td>
 								<td><?= $value['date'] ?></td>
 								<td><?= $value['name'] ?></td>
-								<td><a href="?note=<?= $value['id'] ?>" class="myLink" <?php if (empty($value['note'])){echo 'style="display: none;"';} ?> id="noteLink" data-toggle="modal" data-placement="top" data-target="#noteModal<?= $value['id'] ?>">Открыть</a></td>
+								<td><a href="?note=<?= $value['id'] ?>" class="myLink" <?php if (empty($value['note'])) {
+																							echo 'style="display: none;"';
+																						} ?> id="noteLink" data-toggle="modal" data-placement="top" data-target="#noteModal<?= $value['id'] ?>">Открыть</a></td>
 								<td><?= $value['unit'] ?></td>
 								<td><?= $value['executor'] ?></td>
 								<td><?= $value['status'] ?></td>
 								<td>
-									<a href="?edit=<?= $value['id'] ?>" class="btn btn-primary btn-sm myBtn" data-toggle="modal" data-placement="top" data-target="#editModal<?= $value['id'] ?>"><i class="fa fa-edit"></i></a>
-									<a href="?delete=<?= $value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" data-target="#deleteModal<?= $value['id'] ?>"><i class="fa fa-trash"></i></a>
+									<a href="?edit=<?= $value['id'] ?>" class="btn btn-primary btn-sm myBtn" data-toggle="modal" data-placement="top" data-target="#editModal<?= $value['id'] ?>"><i class="far fa-edit"></i></a>
+									<a href="?delete=<?= $value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" data-target="#deleteModal<?= $value['id'] ?>"><i class="far fa-trash-alt"></i></a>
 									<?php require 'php/modal.php'; ?>
 								</td>
 							</tr>
@@ -71,7 +73,7 @@ include 'php/requests.php';
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- ---------------------------------------------------------Форма Добавить запись -------------------------------------------------------------------------->
 
 	<div class="modal fade" tabindex="-1" role="dialog" id="Modal">
