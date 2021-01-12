@@ -105,9 +105,10 @@ if (isset($_GET['export_submit'])) {
 	$sheet->setCellValue("A1", "№");
 	$sheet->setCellValue("B1", "Дата");
 	$sheet->setCellValue("C1", "Наименование");
-	$sheet->setCellValue("D1", "Подразделение");
-	$sheet->setCellValue("E1", "Исполнитель");
-	$sheet->setCellValue("F1", "Статус");
+	$sheet->setCellValue("D1", "Примечание");
+	$sheet->setCellValue("E1", "Подразделение");
+	$sheet->setCellValue("F1", "Исполнитель");
+	$sheet->setCellValue("G1", "Статус");
 
 
 	$s = 1;
@@ -117,9 +118,10 @@ if (isset($_GET['export_submit'])) {
 		$sheet->setCellValue("A$s", $row['id'], PHPExcel_Cell_DataType::TYPE_STRING);
 		$sheet->setCellValue("B$s", $row['date'], PHPExcel_Cell_DataType::TYPE_STRING);
 		$sheet->setCellValue("C$s", $row['name'], PHPExcel_Cell_DataType::TYPE_STRING);
-		$sheet->setCellValue("D$s", $row['unit'], PHPExcel_Cell_DataType::TYPE_STRING);
-		$sheet->setCellValue("E$s", $row['executor'], PHPExcel_Cell_DataType::TYPE_STRING);
-		$sheet->setCellValue("F$s", $row['status'], PHPExcel_Cell_DataType::TYPE_STRING);
+		$sheet->setCellValue("D$s", $row['note'], PHPExcel_Cell_DataType::TYPE_STRING);
+		$sheet->setCellValue("E$s", $row['unit'], PHPExcel_Cell_DataType::TYPE_STRING);
+		$sheet->setCellValue("F$s", $row['executor'], PHPExcel_Cell_DataType::TYPE_STRING);
+		$sheet->setCellValue("G$s", $row['status'], PHPExcel_Cell_DataType::TYPE_STRING);
 	}
 
 	$sheet->getPageSetup()->SetPaperSize(PHPExcel_Worksheet_PageSetup::PAPERSIZE_A4);
@@ -131,40 +133,47 @@ if (isset($_GET['export_submit'])) {
 	$sheet->getHeaderFooter()->setOddHeader("Экспорт данных");
 	$sheet->getHeaderFooter()->setOddFooter('&L&B Экспорт данных &R Страница &P из &N');
 
-	$sheet->getColumnDimension("A")->setWidth(7);
-	$sheet->getColumnDimension("B")->setWidth(15);
+	$sheet->getColumnDimension("A")->setWidth(5);
+	$sheet->getColumnDimension("B")->setWidth(10);
 	$sheet->getColumnDimension("C")->setWidth(40);
-	$sheet->getColumnDimension("D")->setWidth(25);
-	$sheet->getColumnDimension("E")->setWidth(20);
-	$sheet->getColumnDimension("F")->setWidth(15);
+	$sheet->getColumnDimension("D")->setWidth(60);
+	$sheet->getColumnDimension("E")->setWidth(25);
+	$sheet->getColumnDimension("F")->setWidth(20);
+	$sheet->getColumnDimension("G")->setWidth(15);
 
-	$sheet->getStyle("C$s", $row['name'])->getAlignment()->setWrapText(true);
+	$sheet->getStyle("C1:C$s", $row['name'])->getAlignment()->setWrapText(true);
+	$sheet->getStyle("D1:D$s", $row['note'])->getAlignment()->setWrapText(true);
+	$sheet->getStyle("E1:E$s", $row['note'])->getAlignment()->setWrapText(true);
 	$sheet->getRowDimension("1")->setRowHeight(25);
 
-	$sheet->getStyle("A1")->getFont()->setSize(13);
+	$sheet->getStyle("A1")->getFont()->setSize(8);
 	$sheet->getStyle("A1")->getFont()->setBold(true);
 	$sheet->getStyle("A1")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 	$sheet->getStyle("A1")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-	$sheet->getStyle("B1")->getFont()->setSize(13);
+	$sheet->getStyle("B1")->getFont()->setSize(8);
 	$sheet->getStyle("B1")->getFont()->setBold(true);
 	$sheet->getStyle("B1")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 	$sheet->getStyle("B1")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-	$sheet->getStyle("C1")->getFont()->setSize(13);
+	$sheet->getStyle("C1")->getFont()->setSize(8);
 	$sheet->getStyle("C1")->getFont()->setBold(true);
 	$sheet->getStyle("C1")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 	$sheet->getStyle("C1")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-	$sheet->getStyle("D1")->getFont()->setSize(13);
+	$sheet->getStyle("D1")->getFont()->setSize(8);
 	$sheet->getStyle("D1")->getFont()->setBold(true);
 	$sheet->getStyle("D1")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 	$sheet->getStyle("D1")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-	$sheet->getStyle("E1")->getFont()->setSize(13);
+	$sheet->getStyle("E1")->getFont()->setSize(8);
 	$sheet->getStyle("E1")->getFont()->setBold(true);
 	$sheet->getStyle("E1")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 	$sheet->getStyle("E1")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-	$sheet->getStyle("F1")->getFont()->setSize(13);
+	$sheet->getStyle("F1")->getFont()->setSize(8);
 	$sheet->getStyle("F1")->getFont()->setBold(true);
 	$sheet->getStyle("F1")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 	$sheet->getStyle("F1")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+	$sheet->getStyle("G1")->getFont()->setSize(8);
+	$sheet->getStyle("G1")->getFont()->setBold(true);
+	$sheet->getStyle("G1")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+	$sheet->getStyle("G1")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
 
 	$border = array(
 		'borders' => array(
@@ -175,7 +184,7 @@ if (isset($_GET['export_submit'])) {
 		)
 	);
 
-	$sheet->getStyle("A1:F$s")->applyFromArray($border);
+	$sheet->getStyle("A1:G$s")->applyFromArray($border);
 	$objWriter = PHPExcel_IOFactory::createWriter($xls, 'Excel2007');
 	$objWriter->save("Выборка данных.xlsx");
 

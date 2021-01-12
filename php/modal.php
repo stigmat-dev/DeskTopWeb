@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <form action="?id=<?= $value['id'] ?>" method="post">
                     <div class="form-group">
-                        <input type="date" class="form-control" name="edit_date" value="<?php echo date('Y-m-d'); ?>">
+                        <input type="text" class="form-control" name="edit_date" value="<?= $value['date'] ?>">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="edit_name" value="<?= $value['name'] ?>" placeholder="Наименование">
@@ -63,7 +63,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" name="edit_note" placeholder="Примечание"><?= $value['note'] ?></textarea>
+                        <textarea style="height: 100px;" class="form-control" name="edit_note" placeholder="Примечание"><?= $value['note'] ?></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" name="edit_submit" class="btn btn-primary">Обновить</button>
@@ -108,7 +108,7 @@
 				</div>
 				<div class="modal-body">
 				<div class="form-group">
-				    <textarea id="note" class="form-control" disabled><?= $value['note'] ?></textarea>
+				    <textarea style="height: 200px;" id="note" class="form-control" disabled><?= $value['note'] ?></textarea>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
