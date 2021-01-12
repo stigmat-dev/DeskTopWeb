@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content shadow">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Редактировать запись № <?= $value['id'] ?></h5>
+                <h5 class="modal-title" id="exampleModalLabel"><i class="far fa-edit"></i>&nbsp; Редактировать запись № <?= $value['id'] ?></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -81,7 +81,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content shadow">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Удалить запись № <?= $value['id'] ?> ?</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><i class="far fa-trash-alt"></i>&nbsp; Удалить запись № <?= $value['id'] ?> ?</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -98,21 +98,20 @@
 
 <!---------------------------------Примечание---------------------------------------------->
 <div class="modal fade" id="noteModal<?= $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content shadow">
-				<div class="modal-header">
-					<h5 class="modal-title">Примечание</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-				<div class="form-group">
-				    <textarea style="height: 200px;" id="note" class="form-control" disabled><?= $value['note'] ?></textarea>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content shadow">
+            <div class="modal-header">
+                <h5 class="modal-title">Примечание</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <textarea style="height: 200px;" id="note" class="form-control" disabled><?= $value['note'] ?></textarea>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
             </div>
-		</div>
-	</div>
-
+        </div>
