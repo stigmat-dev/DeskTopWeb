@@ -63,7 +63,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" name="edit_note"><?= $value['note'] ?></textarea>
+                        <textarea class="form-control" name="edit_note" placeholder="Примечание"><?= $value['note'] ?></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" name="edit_submit" class="btn btn-primary">Обновить</button>
