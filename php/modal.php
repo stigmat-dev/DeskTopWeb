@@ -62,6 +62,9 @@
                             <option value="Выполнено">Выполнено</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="edit_note"><?= $value['note'] ?></textarea>
+                    </div>
                     <div class="modal-footer">
                         <button type="submit" name="edit_submit" class="btn btn-primary">Обновить</button>
                     </div>
@@ -92,3 +95,24 @@
         </div>
     </div>
 </div>
+
+<!---------------------------------Примечание---------------------------------------------->
+<div class="modal fade" id="noteModal<?= $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content shadow">
+				<div class="modal-header">
+					<h5 class="modal-title">Примечание</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				<div class="form-group">
+				    <textarea id="note" class="form-control" disabled><?= $value['note'] ?></textarea>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            </div>
+		</div>
+	</div>
+

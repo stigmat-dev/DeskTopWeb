@@ -5,7 +5,7 @@ function docReady() {
       case "В работе":
         document.getElementsByTagName("td")[
           i
-        ].parentNode.style.backgroundColor = "#E6E6FA";
+        ].parentNode.style.backgroundColor = "#e6e6fa";
         break;
       case "Выполнено":
         document.getElementsByTagName("td")[
@@ -15,3 +15,4 @@ function docReady() {
     }
   }
 }
+

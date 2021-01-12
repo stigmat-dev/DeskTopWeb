@@ -54,13 +54,13 @@ include 'php/requests.php';
 								<td><?= $value['id'] ?></td>
 								<td><?= $value['date'] ?></td>
 								<td><?= $value['name'] ?></td>
-								<td><a href="#" class="myLink" data-toggle="modal" data-target="#">Открыть</a></td>
+								<td><a href="?note=<?= $value['id'] ?>" class="myLink" <?php if (empty($value['note'])){echo 'style="display: none;"';} ?> id="noteLink" data-toggle="modal" data-placement="top" data-target="#noteModal<?= $value['id'] ?>">Открыть</a></td>
 								<td><?= $value['unit'] ?></td>
 								<td><?= $value['executor'] ?></td>
 								<td><?= $value['status'] ?></td>
 								<td>
 									<a href="?edit=<?= $value['id'] ?>" class="btn btn-primary btn-sm myBtn" data-toggle="modal" data-placement="top" data-target="#editModal<?= $value['id'] ?>"><i class="fa fa-edit"></i></a>
-									<a href="?delete=<?= $value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" data-target="#deleteModal<?= $value['id'] ?>"><i class="fa fa-trash"></i></i></a>
+									<a href="?delete=<?= $value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" data-target="#deleteModal<?= $value['id'] ?>"><i class="fa fa-trash"></i></a>
 									<?php require 'php/modal.php'; ?>
 								</td>
 							</tr>
@@ -71,7 +71,7 @@ include 'php/requests.php';
 			</div>
 		</div>
 	</div>
-
+	
 	<!-- ---------------------------------------------------------Форма Добавить запись -------------------------------------------------------------------------->
 
 	<div class="modal fade" tabindex="-1" role="dialog" id="Modal">
@@ -148,7 +148,6 @@ include 'php/requests.php';
 			</div>
 		</div>
 	</div>
-
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
