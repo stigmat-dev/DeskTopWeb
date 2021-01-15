@@ -33,11 +33,6 @@ $sql = $connect->prepare("SELECT * FROM main ORDER BY id DESC;");
 $sql->execute();
 $result = $sql->fetchAll();
 
-if (empty($note)) {
-	
-}
-
-
 
 
 if (isset($_POST['add_submit'])) {
@@ -84,6 +79,10 @@ if (isset($_GET['load_submit'])) {
 	$sql = $connect->prepare("SELECT * FROM main;");
 	$sql->execute();
 	$result = $sql->fetchAll();
+	header('Location: ./base.php');
+}
+
+if (isset($_GET['exit_submit'])) {
 	header('Location: ./');
 }
 

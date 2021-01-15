@@ -15,3 +15,7 @@ function docReady() {
     }
   }
 }
+
+setTimeout(function () {
+  $(".msg").fadeOut("fast");
+}, 4000);

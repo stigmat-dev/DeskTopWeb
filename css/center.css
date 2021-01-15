@@ -1,0 +1,54 @@
+/* ------------Авторизация---------------- */
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6e6fa;
+  font-family: "Roboto", sans-serif;
+  font-size: 11pt;
+}
+
+.enterBtn {
+  margin-top: 10px;
+  background-color: #4682b4;
+  border-color: #4682b4;
+}
+.enterBtn:hover {
+  background-color: #f8f8ff;
+  border-color: #4682b4;
+  color: #4682b4;
+}
+
+.myAuth {
+  padding: 20px;
+  border: 1px solid #adaddd;
+  border-radius: 6px;
+  text-align: center;
+}
+
+h2 {
+  color: #4682b4;
+}
+
+hr {
+  border-color: #adaddd;
+}
+
+p {
+  color: rgb(83, 83, 83);
+}
+
+.reg_link {
+  text-decoration: none;
+  color: #4682b4;
+}
+
+.msg {
+  background-color: #6a68c4;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
