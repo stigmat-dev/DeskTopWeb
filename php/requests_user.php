@@ -40,7 +40,7 @@ if (isset($_POST['add_submit'])) {
     $sql = "INSERT INTO main(`date`, `name`, `note`, `unit`, `executor`, `status`) VALUES(?,?,?,?,?,?);";
     $query = $connect->prepare($sql);
     $query->execute([$date, $name, $note, $unit, $executor, $status]);
-    header('Location: ./profile.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
 
