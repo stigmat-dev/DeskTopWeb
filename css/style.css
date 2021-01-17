@@ -39,6 +39,13 @@ table {
   margin: 5px;
 }
 
+.greeting {
+  position: relative;
+  top: 15px;
+  float: left;
+  margin-left: 50px;
+}
+
 .addBtn {
   float: left;
   margin: 15px;
@@ -77,4 +84,3 @@ th {
 .myLink:hover {
   text-decoration: none;
 }
-

@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
+session_start();
 include 'php/requests.php';
 ?>
 <!DOCTYPE html>
@@ -34,6 +35,9 @@ include 'php/requests.php';
 							<button name="find_submit" type="submit" class="btn btn-primary ml-auto searchBtn myBtn"><i class="fas fa-search"></i></button>
 							<input name="start_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
 							<input name="end_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
+							<label class="greeting">
+								<h5>Здравствуйте, <?= $_SESSION['full_name']; ?>!</h5>
+							</label>
 						</div>
 					</form>
 				</nav>
