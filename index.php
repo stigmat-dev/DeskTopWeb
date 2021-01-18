@@ -19,7 +19,7 @@ header('Content-Type: text/html; charset=utf-8');
 </head>
 
 <body>
-  
+
   <!------------------ Форма авторизации ---------------------->
 
   <div class="form-group">
@@ -32,13 +32,13 @@ header('Content-Type: text/html; charset=utf-8');
       <p></p>
       <button type="submit" name="auth_submit" class="form-control btn btn-primary enterBtn">Войти</button>
       <hr />
-      <p>Нет аккаунта? <a class="reg_link" href="reg.php">Регистрация</a></p>
-      <?php 
-            if (@$_SESSION['message']) {
-                echo '<p class="msg">' . @$_SESSION['message'] . '</p>'; 
-            }
-                unset($_SESSION['message']);
-            ?>
+      <p>Нет аккаунта? <a style="text-decoration: none;" class="reg_link" href="reg.php">Регистрация</a></p>
+      <?php
+      if (@$_SESSION['message']) {
+        echo '<p class="msg">' . @$_SESSION['message'] . '</p>';
+      }
+      unset($_SESSION['message']);
+      ?>
     </form>
   </div>
 

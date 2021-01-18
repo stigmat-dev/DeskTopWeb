@@ -31,7 +31,7 @@ $get_id = @$_GET['id'];
 $id = $_SESSION['user_id'];
 
 
-$sql = $connect->prepare("SELECT * FROM main WHERE id_user = '$id';");
+$sql = $connect->prepare("SELECT * FROM main WHERE id_user = '$id' ORDER BY id DESC;");
 $sql->execute();
 $result = $sql->fetchAll();
 
@@ -45,9 +45,9 @@ if (isset($_POST['add_submit'])) {
 
 
 if (isset($_POST['edit_submit'])) {
-    $sql = "UPDATE main SET date=?, name=?, note=?, unit=?, executor=?, status=? WHERE id=?;";
+    $sql = "UPDATE main SET  name=?, note=? WHERE id=?;";
     $query = $connect->prepare($sql);
-    $query->execute([$edit_date, $edit_name, $edit_note, $edit_unit, $edit_executor, $edit_status, $get_id]);
+    $query->execute([$edit_name, $edit_note, $get_id]);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
@@ -61,23 +61,23 @@ if (isset($_POST['delete_submit'])) {
 
 
 if (isset($_GET['search_submit'])) {
-    $sql = "SELECT * FROM main WHERE date LIKE '%$search%' 
-	or name LIKE '%$search%' or unit LIKE '%$search%' or executor LIKE '%$search%' 
-	or status LIKE '%$search%' ORDER BY id ASC;";
+    $sql = "SELECT * FROM main WHERE date LIKE '%$search%' AND id_user = '$id' 
+	or name LIKE '%$search%' AND id_user = '$id' or unit LIKE '%$search%' AND id_user = '$id' or executor LIKE '%$search%' AND id_user = '$id' 
+	or status LIKE '%$search%' AND id_user = '$id' ORDER BY id ASC;";
     $query = $connect->prepare($sql);
     $query->execute();
     $result = $query->fetchAll();
 }
 
 if (isset($_GET['find_submit'])) {
-    $sql = "SELECT * FROM main WHERE date >= '$start_date' AND date <= '$end_date';";
+    $sql = "SELECT * FROM main WHERE date >= '$start_date' AND date <= '$end_date' AND id_user = '$id';";
     $query = $connect->prepare($sql);
     $query->execute();
     $result = $query->fetchAll();
 }
 
 if (isset($_GET['load_submit'])) {
-    $sql = $connect->prepare("SELECT * FROM main;");
+    $sql = $connect->prepare("SELECT * FROM main WHERE id_user = '$id' ORDER BY id DESC;");
     $sql->execute();
     $result = $sql->fetchAll();
     header('Location: ./profile.php');
@@ -89,8 +89,8 @@ if (isset($_GET['exit_submit'])) {
 
 if (isset($_GET['export_submit'])) {
 
-    $link = mysqli_connect('' . $db_host . '', '' . $db_user . '', '' . $db_password . '', '' . $db_name . '');
-    $query = mysqli_query($link, "SELECT * FROM main ORDER by id;");
+    $sql = $connect->prepare("SELECT * FROM main WHERE id_user = '$id';");
+    $sql->execute();
 
     require_once 'PHPExcel.php';
 
@@ -113,7 +113,7 @@ if (isset($_GET['export_submit'])) {
 
     $s = 1;
 
-    while ($row = mysqli_fetch_array($query)) {
+    while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
         $s++;
         $sheet->setCellValue("A$s", $row['id'], PHPExcel_Cell_DataType::TYPE_STRING);
         $sheet->setCellValue("B$s", $row['date'], PHPExcel_Cell_DataType::TYPE_STRING);

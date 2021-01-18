@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-include 'php/requests_user.php';
+include 'php/functions_user.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,24 +24,22 @@ include 'php/requests_user.php';
     <div class="row">
       <div class="col mt-1">
         <nav class="menu shadow">
-        
-          <button class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal"><i class="far fa-address-card"></i></button>
+          <button class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal" title="Добавить запись"><i class="far fa-address-card"></i></button>
           <form action="" method="GET">
             <div class="form-group ">
               <button name="search_submit" type="submit" class="btn btn-primary noBtn">Найти</button>
-              <input type="search" class="form-control search" name="search" value="" placeholder="&#128269;">
-              <button name="load_submit" type="submit" class="btn btn-primary loadBtn myBtn"><i class="fas fa-sync-alt"></i></button>
-              <button name="export_submit" class="btn btn-primary expBtn myBtn" type="submit"><i class="far fa-file-excel"></i></button>
-              <button name="exit_submit" class="btn btn-primary expBtn myBtn" type="submit"><i class="fas fa-sign-out-alt"></i></button>
-              <button name="find_submit" type="submit" class="btn btn-primary ml-auto searchBtn myBtn"><i class="fas fa-search"></i></button>
-              <input name="start_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
-              <input name="end_date" class="dates" type="date" value="<?php echo date('Y-m-d'); ?>">
+              <input type="search" class="form-control search" name="search" value="" placeholder="&#128269; Поиск">
+              <button name="load_submit" type="submit" class="btn btn-primary loadBtn myBtn" title="Обновить базу"><i class="fas fa-sync-alt"></i></button>
+              <button name="export_submit" class="btn btn-primary expBtn myBtn" type="submit" title="Экспорт базы в Excel"><i class="far fa-file-excel"></i></button>
+              <button name="exit_submit" class="btn btn-primary expBtn myBtn" type="submit" title="Выход"><i class="fas fa-sign-out-alt"></i></button>
+              <button name="find_submit" type="submit" class="btn btn-primary ml-auto searchBtn myBtn" title="Найти по датам"><i class="fas fa-search"></i></button>
+              <input name="end_date" class="dates" type="date" title="Конечная дата" value="<?php echo date('Y-m-d'); ?>">
+              <input name="start_date" class="dates" type="date" title="Начальная дата" value="<?php echo date('Y-m-d'); ?>">
               <label class="greeting">
                 <h5>Здравствуйте, <?= $_SESSION['full_name']; ?>!</h5>
               </label>
             </div>
           </form>
-
         </nav>
 
         <table class="table shadow">
@@ -68,15 +66,13 @@ include 'php/requests_user.php';
                 <td><?= $value['executor'] ?></td>
                 <td><?= $value['status'] ?></td>
                 <td>
-                  <a href="?edit=<?= $value['id'] ?>" class="btn btn-primary btn-sm myBtn" data-toggle="modal" data-placement="top" data-target="#editModal<?= $value['id'] ?>"><i class="far fa-edit"></i></a>
-                  <a href="?delete=<?= $value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" data-target="#deleteModal<?= $value['id'] ?>"><i class="far fa-trash-alt"></i></a>
-                  <?php require 'php/modal.php'; ?>
+                  <a href="?edit=<?= $value['id'] ?>" title="Редактировать запись" class="btn btn-primary btn-sm myBtn" data-toggle="modal" data-placement="top" data-target="#editModal<?= $value['id'] ?>"><i class="far fa-edit"></i></a>
+                  <?php require 'php/modal_user.php'; ?>
                 </td>
               </tr>
             <?php } ?>
           </thead>
         </table>
-
       </div>
     </div>
   </div>
@@ -132,21 +128,13 @@ include 'php/requests_user.php';
               </select>
             </div>
             <div class="form-group">
-              <select class="form-control" name="executor">
-                <option value="" selected>Выберите исполнителя</option>
-                <option value="Хрипливцев И.">Хрипливцев И.</option>
-                <option value="Шелудько В.">Шелудько В.</option>
-              </select>
-            </div>
-            <div class="form-group">
               <select class="form-control" name="status">
                 <option value="" selected>Выберите статус</option>
                 <option value="В работе">В работе</option>
-                <option value="Выполнено">Выполнено</option>
               </select>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="note" placeholder="Примечание"></textarea>
+              <textarea style="height: 100px;" class="form-control" name="note" placeholder="Примечание"></textarea>
             </div>
         </div>
         <div class="modal-footer">

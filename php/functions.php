@@ -88,8 +88,8 @@ if (isset($_GET['exit_submit'])) {
 
 if (isset($_GET['export_submit'])) {
 
-	$link = mysqli_connect('' . $db_host . '', '' . $db_user . '', '' . $db_password . '', '' . $db_name . '');
-	$query = mysqli_query($link, "SELECT * FROM main ORDER by id;");
+	$sql = $connect->prepare("SELECT * FROM main;");
+	$sql->execute();
 
 	require_once 'PHPExcel.php';
 
@@ -112,7 +112,7 @@ if (isset($_GET['export_submit'])) {
 
 	$s = 1;
 
-	while ($row = mysqli_fetch_array($query)) {
+	while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 		$s++;
 		$sheet->setCellValue("A$s", $row['id'], PHPExcel_Cell_DataType::TYPE_STRING);
 		$sheet->setCellValue("B$s", $row['date'], PHPExcel_Cell_DataType::TYPE_STRING);
