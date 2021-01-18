@@ -41,9 +41,9 @@ table {
 
 .greeting {
   position: relative;
-  top: 15px;
+  top: 8px;
   float: left;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 .addBtn {

@@ -15,17 +15,20 @@ header('Content-Type: text/html; charset=utf-8');
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/center.css" />
-    <title>База заявок РРЦ | Регистрация</title>
+    <title>АСПУЗ | Регистрация</title>
 </head>
 
 <body>
     <!------------------ Форма регистрации ---------------------->
 
     <div class="form-group">
+        <img class="myLogo" src="img/logo.png" alt="">
+        <h6 class="slogan">Автоматизированная Система Подачи и Учета Заявок</h6>
+        <br>
         <form class="myAuth" action="php/signup.php" method="post">
             <h2>Регистрация</h2>
             <p></p>
-            <input class="form-control" name="full_name" type="text" placeholder="Имя Фамилия" />
+            <input class="form-control" name="full_name" type="text" placeholder="ФИО" />
             <p></p>
             <input class="form-control" name="login" type="text" placeholder="Логин" />
             <p></p>

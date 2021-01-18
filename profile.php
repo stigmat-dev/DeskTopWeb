@@ -36,7 +36,7 @@ include 'php/functions_user.php';
               <input name="end_date" class="dates" type="date" title="Конечная дата" value="<?php echo date('Y-m-d'); ?>">
               <input name="start_date" class="dates" type="date" title="Начальная дата" value="<?php echo date('Y-m-d'); ?>">
               <label class="greeting">
-                <h5>Здравствуйте, <?= $_SESSION['full_name']; ?>!</h5>
+                <h5>Добрый день, <?= $_SESSION['full_name']; ?>!</h5>
               </label>
             </div>
           </form>
