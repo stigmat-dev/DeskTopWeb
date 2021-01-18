@@ -13,6 +13,7 @@ $check_user = $connect->query("SELECT * FROM users WHERE login='$login' AND pass
 $check_admin = $connect->query("SELECT * FROM users WHERE login='admin' AND password='111';");
 $user = $check_user->fetch(PDO::FETCH_ASSOC);
 $count = $check_user->rowCount();
+$_SESSION['user_id'] = $user['id'];
 
 if ($login === '') {
     $_SESSION['message'] = 'Логин не может быть пустым!';

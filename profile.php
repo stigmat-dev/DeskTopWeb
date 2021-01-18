@@ -24,6 +24,7 @@ include 'php/requests_user.php';
     <div class="row">
       <div class="col mt-1">
         <nav class="menu shadow">
+        
           <button class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal"><i class="far fa-address-card"></i></button>
           <form action="" method="GET">
             <div class="form-group ">

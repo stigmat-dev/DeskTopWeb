@@ -28,18 +28,18 @@ $edit_unit = @$_POST['edit_unit'];
 $edit_executor = @$_POST['edit_executor'];
 $edit_status = @$_POST['edit_status'];
 $get_id = @$_GET['id'];
+$id = $_SESSION['user_id'];
 
 
-
-$sql = $connect->prepare("SELECT * FROM main WHERE id;");
+$sql = $connect->prepare("SELECT * FROM main WHERE id_user = '$id';");
 $sql->execute();
 $result = $sql->fetchAll();
 
 
 if (isset($_POST['add_submit'])) {
-    $sql = "INSERT INTO main(`date`, `name`, `note`, `unit`, `executor`, `status`) VALUES(?,?,?,?,?,?);";
+    $sql = "INSERT INTO main(`date`, `name`, `note`, `unit`, `executor`, `status`, `id_user`) VALUES(?,?,?,?,?,?,?);";
     $query = $connect->prepare($sql);
-    $query->execute([$date, $name, $note, $unit, $executor, $status]);
+    $query->execute([$date, $name, $note, $unit, $executor, $status, $id]);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
@@ -77,7 +77,7 @@ if (isset($_GET['find_submit'])) {
 }
 
 if (isset($_GET['load_submit'])) {
-    $sql = $connect->prepare("SELECT * FROM main WHERE id_user;");
+    $sql = $connect->prepare("SELECT * FROM main;");
     $sql->execute();
     $result = $sql->fetchAll();
     header('Location: ./profile.php');
