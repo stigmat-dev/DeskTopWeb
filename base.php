@@ -15,7 +15,7 @@ include 'php/functions.php';
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
-	<title>База заявок РРЦ</title>
+	<title><?= $_SESSION['full_name']; ?> АСПУЗ</title>
 </head>
 
 <body>
