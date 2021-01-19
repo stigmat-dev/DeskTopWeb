@@ -15,7 +15,7 @@ include 'php/functions.php';
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
-	<title><?= $_SESSION['full_name']; ?> АСПУЗ</title>
+	<title>Кабинет | <?= $_SESSION['full_name']; ?></title>
 </head>
 
 <body>
@@ -133,6 +133,7 @@ include 'php/functions.php';
 								<option value="" selected>Выберите исполнителя</option>
 								<option value="Хрипливцев И.">Хрипливцев И.</option>
 								<option value="Шелудько В.">Шелудько В.</option>
+								<option value="Хрипливцев, Шелудько">Хрипливцев, Шелудько</option>
 							</select>
 						</div>
 						<div class="form-group">
@@ -143,7 +144,7 @@ include 'php/functions.php';
 							</select>
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" name="note" placeholder="Примечание"></textarea>
+							<textarea style="height: 100px;" class="form-control" name="note" placeholder="Примечание"></textarea>
 						</div>
 				</div>
 				<div class="modal-footer">

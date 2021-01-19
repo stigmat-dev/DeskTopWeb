@@ -15,7 +15,7 @@ header('Content-Type: text/html; charset=utf-8');
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/center.css" />
-  <title>АСПУЗ | Вход</title>
+  <title>АСПОЗ | Вход</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@ header('Content-Type: text/html; charset=utf-8');
 
   <div class="form-group">
     <img class="myLogo" src="img/logo.png" alt="">
-    <h6 class="slogan">Автоматизированная Система Подачи и Учета Заявок</h6>
+    <h6 class="slogan">Автоматизированная Система Подачи и Обработки Заявок</h6>
     <br>
     <form class="myAuth" action="php/signin.php" method="post">
 

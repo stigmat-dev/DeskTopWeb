@@ -53,6 +53,7 @@
                             <option value="<?= $value['executor'] ?>" selected><?= $value['executor'] ?></option>
                             <option value="Хрипливцев И.">Хрипливцев И.</option>
                             <option value="Шелудько В.">Шелудько В.</option>
+                            <option value="Хрипливцев, Шелудько">Хрипливцев, Шелудько</option>
                         </select>
                     </div>
                     <div class="form-group">

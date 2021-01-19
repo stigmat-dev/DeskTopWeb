@@ -1,7 +1,7 @@
 /* ------------Авторизация---------------- */
 
 body {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,9 +28,9 @@ body {
   text-align: center;
 }
 .myLogo {
-  padding-left: 135px;
+  padding-left: 150px;
   padding-right: 50px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 h2 {
