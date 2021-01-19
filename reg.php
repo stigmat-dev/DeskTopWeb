@@ -37,7 +37,7 @@ header('Content-Type: text/html; charset=utf-8');
             <input class="form-control" name="password_confirm" type="password" placeholder="Подтвердите пароль" />
             <p></p>
             <button type="submit" name="reg_submit" class="form-control btn btn-primary enterBtn">Регистрация</button>
-            <hr />
+            <p></p>
             <p>Есть аккаунт? <a style="text-decoration: none;" class="reg_link" href="./">Войти</a></p>
             <?php
             if (@$_SESSION['message']) {

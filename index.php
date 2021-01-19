@@ -24,7 +24,9 @@ header('Content-Type: text/html; charset=utf-8');
 
   <div class="form-group">
     <img class="myLogo" src="img/logo.png" alt="">
+
     <h6 class="slogan">Автоматизированная Система Подачи и Обработки Заявок</h6>
+
     <br>
     <form class="myAuth" action="php/signin.php" method="post">
 
@@ -36,9 +38,9 @@ header('Content-Type: text/html; charset=utf-8');
       <p></p>
       <button type="submit" name="auth_submit" class="form-control btn btn-primary enterBtn">Войти</button>
       <p></p>
-      <p><a style="text-decoration: none;" class="reg_link" href="recovery.php">Забыли пароль?</a></p>
-      </p>
       <p>Нет аккаунта? <a style="text-decoration: none;" class="reg_link" href="reg.php">Регистрация</a></p>
+      <p></p>
+      <p><a style="text-decoration: none;" class="reg_link" href="recovery.php">Забыли пароль?</a></p>
       <?php
       if (@$_SESSION['message']) {
         echo '<p class="msg">' . @$_SESSION['message'] . '</p>';

@@ -11,6 +11,7 @@ body {
 }
 
 .enterBtn {
+  width: 150px;
   margin-top: 10px;
   background-color: #4682b4;
   border-color: #4682b4;
@@ -28,7 +29,7 @@ body {
   text-align: center;
 }
 .myLogo {
-  padding-left: 150px;
+  padding-left: 170px;
   padding-right: 50px;
   padding-bottom: 20px;
 }
@@ -51,11 +52,14 @@ p {
 }
 
 .msg {
-  background-color: #6a68c4;
-  color: white;
+  background-color: #bddbff;
+  color: #1b7ec9;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
+  border: 2px solid #3d9ae2;
+  font-size: 110%;
+  font-weight: bold;
 }
 .slogan {
   color: #4682b4;
