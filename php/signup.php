@@ -14,7 +14,7 @@ if ($password === $password_confirm) {
 
     if (isset($_POST['reg_submit'])) {
 
-        //$password = md5($password);
+        $password = md5($password);
 
 
         if ($full_name === '') {

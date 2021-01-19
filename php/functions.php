@@ -30,7 +30,7 @@ $get_id = @$_GET['id'];
 $id = $_SESSION['user_id'];
 
 
-$sql = $connect->prepare("SELECT * FROM main WHERE id_user = '$id' ORDER BY id DESC;");
+$sql = $connect->prepare("SELECT * FROM main ORDER BY id DESC;");
 $sql->execute();
 $result = $sql->fetchAll();
 
@@ -76,7 +76,7 @@ if (isset($_GET['find_submit'])) {
 }
 
 if (isset($_GET['load_submit'])) {
-    $sql = $connect->prepare("SELECT * FROM main WHERE id_user = '$id' ORDER BY id DESC;");
+    $sql = $connect->prepare("SELECT * FROM main ORDER BY id DESC;");
     $sql->execute();
     $result = $sql->fetchAll();
     header('Location: ./base.php');

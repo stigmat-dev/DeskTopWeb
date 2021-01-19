@@ -35,7 +35,9 @@ header('Content-Type: text/html; charset=utf-8');
       <input class="form-control" name="password" type="password" placeholder="Пароль" />
       <p></p>
       <button type="submit" name="auth_submit" class="form-control btn btn-primary enterBtn">Войти</button>
-      <hr />
+      <p></p>
+      <p><a style="text-decoration: none;" class="reg_link" href="recovery.php">Забыли пароль?</a></p>
+      </p>
       <p>Нет аккаунта? <a style="text-decoration: none;" class="reg_link" href="reg.php">Регистрация</a></p>
       <?php
       if (@$_SESSION['message']) {
