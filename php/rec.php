@@ -14,7 +14,7 @@ $count = $check_user->rowCount();
 
 if ($count === 1) {
 
-    $new_password = md5($new_password);
+    //$new_password = md5($new_password);
 
     $sql = $connect->query("UPDATE users SET password='$new_password' WHERE login='$login';");
     $_SESSION['message'] = 'Пароль восстановлен!';

@@ -116,3 +116,24 @@
                 </div>
             </div>
         </div>
+
+        <!---------------------------------Бан---------------------------------------------->
+        <div class="modal fade" id="qqqModal<?= $value['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content shadow">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Примечание</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <form action="?id=<?= $value['id'] ?>" method="post">
+                            <input type="text" class="form-control" name="edit_ban" value="1" hidden>
+                            <button type="submit" name="ban_submit" class="btn btn-primary">Забанить</button>
+                        </form>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </div>

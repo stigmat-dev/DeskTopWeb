@@ -14,8 +14,7 @@ if ($password === $password_confirm) {
 
     if (isset($_POST['reg_submit'])) {
 
-        $password = md5($password);
-
+        //$password = md5($password);
 
         if ($full_name === '') {
             $_SESSION['message'] = 'ФИО не может быть пустым!';
@@ -27,7 +26,7 @@ if ($password === $password_confirm) {
             $_SESSION['message'] = 'Пароль не может быть пустым!';
             header('Location: ../reg.php');
         } else {
-            $sql = "INSERT INTO users (id, full_name, login, password) VALUES (NULL, '$full_name', '$login', '$password');";
+            $sql = "INSERT INTO users (id, full_name, login, password, ban) VALUES (NULL, '$full_name', '$login', '$password', '0');";
             $query = $connect->prepare($sql);
             $query->execute();
             $_SESSION['message'] = 'Регистрация прошла успешно!';
