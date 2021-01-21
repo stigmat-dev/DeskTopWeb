@@ -37,10 +37,6 @@ $result = $sql->fetchAll();
 $main = $sql->fetch(PDO::FETCH_ASSOC);
 
 
-
-
-
-
 if (isset($_POST['add_submit'])) {
     $sql = "INSERT INTO main(`date`, `name`, `note`, `unit`, `executor`, `status`, `id_user`) VALUES(?,?,?,?,?,?,?);";
     $query = $connect->prepare($sql);
@@ -56,10 +52,7 @@ if (isset($_POST['add_submit'])) {
     $header = "From: " . $from_name . " <" . $from_mail . ">" . $eol;
 
     mail($to, $subject, $message, $header);
-
-
-
-    header('Location: php/mail.php');
+    header('Location: php/back.php');
 }
 
 
