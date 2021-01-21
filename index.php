@@ -26,7 +26,9 @@ header('Content-Type: text/html; charset=utf-8');
     <img class="myLogo" src="img/logo.png" alt="">
 
     <h6 class="slogan">Автоматизированная Система Подачи и Обработки Заявок</h6>
-
+    <h5 class="slogan2" title="Систематика (наука) — научный метод, заключающийся в упорядочении, 
+    структурировании и нотификации больших совокупностей объектов 
+    некоторой сферы реальности или отрасли деятельности">"СИСТЕМАТИКА"</h5>
     <br>
     <form class="myAuth" action="php/signin.php" method="post">
 
@@ -43,7 +45,7 @@ header('Content-Type: text/html; charset=utf-8');
       <p><a style="text-decoration: none;" class="reg_link" href="recovery.php">Забыли пароль?</a></p>
       <?php
       if (@$_SESSION['message']) {
-          echo '<p class="msg">' . @$_SESSION['message'] . '</p>';
+        echo '<p class="msg">' . @$_SESSION['message'] . '</p>';
       }
       unset($_SESSION['message']);
       ?>

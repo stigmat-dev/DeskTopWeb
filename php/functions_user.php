@@ -42,14 +42,13 @@ if (isset($_POST['add_submit'])) {
     $query = $connect->prepare($sql);
     $query->execute([$date, $name, $note, $unit, $executor, $status, $id]);
 
-    $from_name = 'АСПОЗ';
-    $from_mail = 'stigmat.svo@gmail.com';
+    $from_name = 'АСПОЗ "СИСТЕМАТИКА"';
     $eol = PHP_EOL;
 
-    $to = 'sheludko.vo@gmail.com';
-    $subject = "Новая заявка";
-    $message = 'Заявочка';
-    $header = "From: " . $from_name . " <" . $from_mail . ">" . $eol;
+    $to = 'rrc.aspoz@gmail.com';
+    $subject = "Новая заявка от " . $_SESSION['full_name'] . '.';
+    $message = $name;
+    $header = "From: " . $from_name . $eol;
 
     mail($to, $subject, $message, $header);
     header('Location: php/back.php');
