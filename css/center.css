@@ -1,5 +1,4 @@
 /* ------------Авторизация---------------- */
-
 body {
   height: 100vh;
   display: flex;
@@ -16,6 +15,7 @@ body {
   background-color: #4682b4;
   border-color: #4682b4;
 }
+
 .enterBtn:hover {
   background-color: #f8f8ff;
   border-color: #4682b4;
@@ -28,6 +28,7 @@ body {
   border-radius: 6px;
   text-align: center;
 }
+
 .myLogo {
   padding-left: 170px;
   padding-right: 50px;
@@ -61,6 +62,7 @@ p {
   font-size: 110%;
   font-weight: bold;
 }
+
 .slogan {
   color: #4682b4;
 }

@@ -24,7 +24,7 @@ include 'php/functions_user.php';
     <div class="row">
       <div class="col mt-1">
         <nav class="menu shadow">
-          <button class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal" title="Добавить запись"><i class="far fa-address-card"></i></button>
+          <button type="submit" name="mail_submit" class="btn btn-primary mb-1 ml-auto myBtn addBtn" data-toggle="modal" data-target="#Modal" title="Добавить запись"><i class="far fa-address-card"></i></button>
           <form action="" method="GET">
             <div class="form-group ">
               <button name="search_submit" type="submit" class="btn btn-primary noBtn">Найти</button>

@@ -43,7 +43,7 @@ header('Content-Type: text/html; charset=utf-8');
       <p><a style="text-decoration: none;" class="reg_link" href="recovery.php">Забыли пароль?</a></p>
       <?php
       if (@$_SESSION['message']) {
-        echo '<p class="msg">' . @$_SESSION['message'] . '</p>';
+          echo '<p class="msg">' . @$_SESSION['message'] . '</p>';
       }
       unset($_SESSION['message']);
       ?>

@@ -31,6 +31,7 @@ include 'php/functions.php';
 							<button name="load_submit" type="submit" class="btn btn-primary loadBtn myBtn" title="Обновить базу"><i class="fas fa-sync-alt"></i></button>
 							<button name="export_submit" class="btn btn-primary expBtn myBtn" type="submit" title="Экспорт базы в Excel"><i class="far fa-file-excel"></i></button>
 							<a href="users.php" class="btn btn-primary expBtn myBtn" title="Пользователи"><i class="fas fa-user"></i></a>
+
 							<button name="exit_submit" class="btn btn-primary expBtn myBtn" type="submit" title="Выход"><i class="fas fa-sign-out-alt"></i></button>
 							<button name="find_submit" type="submit" class="btn btn-primary ml-auto searchBtn myBtn" title="Найти по датам"><i class="fas fa-search"></i></button>
 							<input name="end_date" class="dates" type="date" title="Конечная дата" value="<?php echo date('Y-m-d'); ?>">
@@ -74,7 +75,6 @@ include 'php/functions.php';
 						<?php } ?>
 					</thead>
 				</table>
-
 			</div>
 		</div>
 	</div>

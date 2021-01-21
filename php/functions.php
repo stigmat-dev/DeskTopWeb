@@ -60,8 +60,8 @@ if (isset($_POST['delete_submit'])) {
 
 
 if (isset($_GET['search_submit'])) {
-    $sql = "SELECT * FROM main WHERE date LIKE '%$search%' AND id_user = '$id' 
-	or name LIKE '%$search%' AND id_user = '$id' or unit LIKE '%$search%' AND id_user = '$id' or executor LIKE '%$search%' AND id_user = '$id' 
+    $sql = "SELECT * FROM main WHERE date LIKE '%$search%' AND id_user = '$id'
+	or name LIKE '%$search%' AND id_user = '$id' or unit LIKE '%$search%' AND id_user = '$id' or executor LIKE '%$search%' AND id_user = '$id'
 	or status LIKE '%$search%' AND id_user = '$id' ORDER BY id ASC;";
     $query = $connect->prepare($sql);
     $query->execute();
@@ -86,8 +86,18 @@ if (isset($_GET['exit_submit'])) {
     header('Location: ./');
 }
 
-if (isset($_GET['export_submit'])) {
+// if (isset($_GET['mail_submit'])) {
 
+//     $message = "Всем привет!";
+
+//     // На случай если какая-то строка письма длиннее 70 символов мы используем wordwrap()
+//     $message = wordwrap($message, 70, "\r\n");
+
+//     // Отправляем
+//     mail('sheludko.vo@gmail.com', 'My Subject', $message);
+// }
+
+if (isset($_GET['export_submit'])) {
     $sql = $connect->prepare("SELECT * FROM main WHERE id_user = '$id';");
     $sql->execute();
 
