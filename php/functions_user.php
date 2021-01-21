@@ -42,15 +42,91 @@ if (isset($_POST['add_submit'])) {
     $query = $connect->prepare($sql);
     $query->execute([$date, $name, $note, $unit, $executor, $status, $id]);
 
-    $from_name = 'АСПОЗ "СИСТЕМАТИКА"';
-    $eol = PHP_EOL;
+    //-------------------Отправка письма---------------------------
 
-    $to = 'rrc.aspoz@gmail.com';
-    $subject = "Новая заявка от " . $_SESSION['full_name'] . '.';
-    $message = $name;
-    $header = "From: " . $from_name . $eol;
+    $admin_email = 'rrc.aspoz@gmail.com';
 
-    mail($to, $subject, $message, $header);
+    $form_subject = "Новая заявка от " . $_SESSION['full_name'];
+
+    $project_name = 'АСПОЗ ‎СИСТЕМАТИКА';
+
+    $html = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+                <html lang="ru">
+                    <head>
+                        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <title>' . $form_subject . '</title>
+                    </head>
+                    <body>';
+
+    $c = true;
+    $plain_text = '';
+    $table = '';
+
+    foreach ($_POST as $key => $value) {
+        if (is_array($value)) $value = implode(", ", $value);
+
+        if ($value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject") {
+
+            // text/html 
+            $table .= (($c = !$c) ? '<tr>' : '<tr style="background-color: #E6E6FA;">') . '
+            <td style="padding: 10px; border: #E6E6FA 1px solid;"><b>' . $key . '</b></td>
+            <td style="padding: 10px; border: #E6E6FA 1px solid;">' . $value . '</td>
+        </tr>';
+
+            // text/plain 
+            $plain_text .= $key . ": " . $value . "\r\n";
+        }
+    }
+
+    $html .= '<table width="100%">
+        <tr style="text-align: center;">
+            <td style="background-color: #4682B4; color: white; padding: 0 10px; width: 100%; border: #e9e9e9 1px solid;" colspan="2">
+                <h2>' . $form_subject . '</h2>
+            </td>
+        </tr>
+        ' . $table . '
+    </table>
+</body>
+</html>';
+
+    function adopt($text)
+    {
+        return '=?UTF-8?B?' . Base64_encode($text) . '?=';
+    }
+
+    $boundary = "--" . md5(uniqid(time())); // генерируем разделитель 
+
+    $headers = array(
+        'MIME-Version' => '1.0',
+        'Date' => date("d.m.Y", strtotime($date)),
+        'From' => $project_name,
+        'Reply-To' => $project_name,
+        'X-Mailer' => 'PHP/' . phpversion(),
+        'Content-Type' => 'multipart/alternative; boundary="' . $boundary . '"',
+    );
+
+    // Текстовая версия письма 
+    $message_plain_text .= "--$boundary" . "\n";
+
+    $message_plain_text .= 'Content-Type: text/plain; charset=utf-8' . "\n";
+    $message_plain_text .= 'Content-Transfer-Encoding: 8bit' . "\n\n";
+    $message_plain_text .= $form_subject . "\r\n" . $plain_text . "\n";
+
+    // HTML-версия письма 
+    $message_html .= "--$boundary" . "\n";
+
+    $message_html .= 'Content-Type: text/html; charset=utf-8' . "\n";
+    $message_html .= 'Content-Transfer-Encoding: 8bit' . "\n\n";
+    $message_html .= $html . "\n";
+
+    $multipart_alternative = $message_plain_text . $message_html . "--$boundary--" . "\n";
+
+    if (!mail($admin_email, adopt($form_subject), $multipart_alternative, $headers, $project_name)) {
+        $error = error_get_last()['message'];
+        print_r($error);
+    }
+    //-------------------------------------------------------------
     header('Location: php/back.php');
 }
 
