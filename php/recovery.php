@@ -25,8 +25,11 @@ header('Content-Type: text/html; charset=utf-8');
     <div class="form-group">
         <img class="myLogo" src="../img/logo.png" alt="">
         <h6 class="slogan">Автоматизированная Система Подачи и Обработки Заявок</h6>
+        <h5 class="slogan2" title="Систематика (наука) — научный метод, заключающийся в упорядочении, 
+    структурировании и нотификации больших совокупностей объектов 
+    некоторой сферы реальности или отрасли деятельности">«СИСТЕМАТИКА»</h5>
         <br>
-        <form class="myAuth" action="php/rec.php" method="post">
+        <form class="myAuth" action="rec.php" method="post">
 
             <h2>Восстановление пароля</h2>
             <p></p>
