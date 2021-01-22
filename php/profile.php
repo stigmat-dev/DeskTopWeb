@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-include 'php/functions_user.php';
+include 'functions_user.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +11,10 @@ include 'php/functions_user.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" />
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <title>Кабинет | <?= $_SESSION['full_name']; ?></title>
 </head>
 
@@ -67,7 +67,7 @@ include 'php/functions_user.php';
                 <td><?= $value['status'] ?></td>
                 <td>
                   <a href="?edit=<?= $value['id'] ?>" title="Редактировать запись" class="btn btn-primary btn-sm myBtn" data-toggle="modal" data-placement="top" data-target="#editModal<?= $value['id'] ?>"><i class="far fa-edit"></i></a>
-                  <?php require 'php/modal_user.php'; ?>
+                  <?php require 'modal_user.php'; ?>
                 </td>
               </tr>
             <?php } ?>

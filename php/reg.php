@@ -11,10 +11,10 @@ header('Content-Type: text/html; charset=utf-8');
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" />
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/center.css" />
+    <link rel="stylesheet" href="../css/center.css" />
     <title>АСПОЗ | Регистрация</title>
 </head>
 
@@ -22,7 +22,7 @@ header('Content-Type: text/html; charset=utf-8');
     <!------------------ Форма регистрации ---------------------->
 
     <div class="form-group">
-        <img class="myLogo" src="img/logo.png" alt="">
+        <img class="myLogo" src="../img/logo.png" alt="">
         <h6 class="slogan">Автоматизированная Система Подачи и Обработки Заявок</h6>
         <br>
         <form class="myAuth" action="php/signup.php" method="post">
@@ -38,7 +38,7 @@ header('Content-Type: text/html; charset=utf-8');
             <p></p>
             <button type="submit" name="reg_submit" class="form-control btn btn-primary enterBtn">Регистрация</button>
             <p></p>
-            <p>Есть аккаунт? <a style="text-decoration: none;" class="reg_link" href="./">Войти</a></p>
+            <p>Есть аккаунт? <a style="text-decoration: none;" class="reg_link" href="../">Войти</a></p>
             <?php
             if (@$_SESSION['message']) {
                 echo '<p class="msg">' . @$_SESSION['message'] . '</p>';

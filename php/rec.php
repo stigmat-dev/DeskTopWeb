@@ -21,5 +21,5 @@ if ($count === 1) {
     header('Location: ../');
 } else {
     $_SESSION['message'] = 'Такой логин не найден!';
-    header('Location: ../recovery.php');
+    header('Location: ./recovery.php');
 }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 header('Content-Type: text/html; charset=utf-8');
-include 'php/admin.php';
+include 'admin.php';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -11,11 +11,11 @@ include 'php/admin.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
-	<title>Юзеры | <?= $_SESSION['full_name']; ?></title>
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Пользователи | <?= $_SESSION['full_name']; ?></title>
 </head>
 
 <body>
@@ -65,7 +65,7 @@ include 'php/admin.php';
 										<a href="?delete=<?= $value['id'] ?>" title="Удалить пользователя" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" data-target="#deleteModal<?= $value['id'] ?>"><i class="far fa-trash-alt"></i></a>
 									</form>
 
-									<?php require 'php/modal.php'; ?>
+									<?php require 'modal.php'; ?>
 								</td>
 							</tr>
 						<?php } ?>

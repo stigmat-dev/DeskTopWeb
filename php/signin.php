@@ -28,8 +28,8 @@ if ($login === '') {
     header('Location: ../');
 } elseif ($login === 'admin' && $password === $password) {
     $_SESSION['full_name'] = $user['full_name'];
-    header('Location: ../base.php');
+    header('Location: ./base.php');
 } else {
     $_SESSION['full_name'] = $user['full_name'];
-    header('Location: ../profile.php');
+    header('Location: ./profile.php');
 }

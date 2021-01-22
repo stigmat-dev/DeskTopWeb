@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 session_start();
-include 'php/functions.php';
+include 'functions.php';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -14,7 +14,7 @@ include 'php/functions.php';
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/style.css">
 	<title>Кабинет | <?= $_SESSION['full_name']; ?></title>
 </head>
 
@@ -69,7 +69,7 @@ include 'php/functions.php';
 								<td>
 									<a href="?edit=<?= $value['id'] ?>" title="Редактировать запись" class="btn btn-primary btn-sm myBtn" data-toggle="modal" data-placement="top" data-target="#editModal<?= $value['id'] ?>"><i class="far fa-edit"></i></a>
 									<a href="?delete=<?= $value['id'] ?>" title="Удалить запись" class="btn btn-danger btn-sm" data-toggle="modal" data-placement="top" data-target="#deleteModal<?= $value['id'] ?>"><i class="far fa-trash-alt"></i></a>
-									<?php require 'php/modal.php'; ?>
+									<?php require 'modal.php'; ?>
 								</td>
 							</tr>
 						<?php } ?>

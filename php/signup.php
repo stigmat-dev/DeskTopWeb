@@ -18,13 +18,13 @@ if ($password === $password_confirm) {
 
         if ($full_name === '') {
             $_SESSION['message'] = 'ФИО не может быть пустым!';
-            header('Location: ../reg.php');
+            header('Location: ./reg.php');
         } elseif ($login === '') {
             $_SESSION['message'] = 'Логин не может быть пустым!';
-            header('Location: ../reg.php');
+            header('Location: ./reg.php');
         } elseif ($password === '') {
             $_SESSION['message'] = 'Пароль не может быть пустым!';
-            header('Location: ../reg.php');
+            header('Location: ./reg.php');
         } else {
             $sql = "INSERT INTO users (id, full_name, login, password, ban) VALUES (NULL, '$full_name', '$login', '$password', '0');";
             $query = $connect->prepare($sql);

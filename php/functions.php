@@ -83,19 +83,8 @@ if (isset($_GET['load_submit'])) {
 }
 
 if (isset($_GET['exit_submit'])) {
-    header('Location: ./');
+    header('Location: ../');
 }
-
-// if (isset($_GET['mail_submit'])) {
-
-//     $message = "Всем привет!";
-
-//     // На случай если какая-то строка письма длиннее 70 символов мы используем wordwrap()
-//     $message = wordwrap($message, 70, "\r\n");
-
-//     // Отправляем
-//     mail('sheludko.vo@gmail.com', 'My Subject', $message);
-// }
 
 if (isset($_GET['export_submit'])) {
     $sql = $connect->prepare("SELECT * FROM main WHERE id_user = '$id';");

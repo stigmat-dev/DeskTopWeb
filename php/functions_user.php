@@ -171,7 +171,7 @@ if (isset($_GET['load_submit'])) {
 }
 
 if (isset($_GET['exit_submit'])) {
-    header('Location: ./');
+    header('Location: ../');
 }
 
 if (isset($_GET['export_submit'])) {

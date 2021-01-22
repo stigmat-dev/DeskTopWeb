@@ -40,9 +40,9 @@ header('Content-Type: text/html; charset=utf-8');
       <p></p>
       <button type="submit" name="auth_submit" class="form-control btn btn-primary enterBtn">Войти</button>
       <p></p>
-      <p>Нет аккаунта? <a style="text-decoration: none;" class="reg_link" href="reg.php">Регистрация</a></p>
+      <p>Нет аккаунта? <a style="text-decoration: none;" class="reg_link" href="php/reg.php">Регистрация</a></p>
       <p></p>
-      <p><a style="text-decoration: none;" class="reg_link" href="recovery.php">Забыли пароль?</a></p>
+      <p><a style="text-decoration: none;" class="reg_link" href="php/recovery.php">Забыли пароль?</a></p>
       <?php
       if (@$_SESSION['message']) {
         echo '<p class="msg">' . @$_SESSION['message'] . '</p>';
