@@ -15,7 +15,7 @@ header('Content-Type: text/html; charset=utf-8');
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/center.css" />
-  <title>АСПОЗ | Вход</title>
+  <title>АИС | Вход</title>
 </head>
 
 <body>
@@ -25,10 +25,8 @@ header('Content-Type: text/html; charset=utf-8');
   <div class="form-group">
     <img class="myLogo" src="img/logo.png" alt="">
 
-    <h6 class="slogan">Автоматизированная Система Подачи и Обработки Заявок</h6>
-    <h5 class="slogan2" title="Систематика (наука) — научный метод, заключающийся в упорядочении, 
-    структурировании и нотификации больших совокупностей объектов 
-    некоторой сферы реальности или отрасли деятельности">«СИСТЕМАТИКА»</h5>
+    <h6 class="slogan">Автоматизированная Информационная Система</h6>
+    <h5 class="slogan2">«ИНФО-ПРО»</h5>
     <br>
     <form class="myAuth" action="php/signin.php" method="post">
 

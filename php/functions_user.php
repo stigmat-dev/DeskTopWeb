@@ -127,7 +127,7 @@ if (isset($_POST['add_submit'])) {
         print_r($error);
     }
     //-------------------------------------------------------------
-    header('Location: php/back.php');
+    header('Location: back.php');
 }
 
 
