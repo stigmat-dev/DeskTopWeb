@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <select class="form-control" name="edit_unit" value="<?= $value['unit'] ?>" disabled>
-                            <option value="<?= $value['unit'] ?>" selected><?= $value['unit'] ?></option>
+                            <option style="background: grey; color: white;" value="<?= $value['unit'] ?>" selected><?= $value['unit'] ?></option>
                             <option value="Главный врач">Главный врач</option>
                             <option value="Приемная">Приемная</option>
                             <option value="Зам. по медицинской части">Зам. по медицинской части</option>
@@ -50,14 +50,14 @@
                     </div>
                     <div class="form-group">
                         <select class="form-control" name="edit_executor" value="<?= $value['executor'] ?>" disabled>
-                            <option value="<?= $value['executor'] ?>" selected><?= $value['executor'] ?></option>
+                            <option style="background: grey; color: white;" value="<?= $value['executor'] ?>" selected><?= $value['executor'] ?></option>
                             <option value="Хрипливцев И.">Хрипливцев И.</option>
                             <option value="Шелудько В.">Шелудько В.</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <select class="form-control" name="edit_status" value="<?= $value['status'] ?>" disabled>
-                            <option value="<?= $value['status'] ?>" selected><?= $value['status'] ?></option>
+                            <option style="background: grey; color: white;" value="<?= $value['status'] ?>" selected><?= $value['status'] ?></option>
                             <option value="В работе">В работе</option>
                             <option value="Выполнено">Выполнено</option>
                         </select>
